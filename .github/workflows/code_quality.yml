@@ -8,6 +8,16 @@ on:
       - 'releases/*' # The release branches
 
 jobs:
+  codacy-coverage-reporter:
+    runs-on: ubuntu-latest
+    name: codacy-coverage-reporter
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run codacy-coverage-reporter
+        uses: ./
+        with:
+          project-token: 'd84219908a924b269befc6d94df0bfda'
+          coverage-reporter-version: 13.13.15
   qodana:
     runs-on: ubuntu-latest
     permissions:
